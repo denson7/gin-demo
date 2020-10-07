@@ -1,0 +1,17 @@
+*.exe
+*.dll
+*.so
+.idea
+.vscode
+*.DS_Store
+.DS_Store
+cache
+tests
+cache/
+logs/
+uploads/
+*.conf
+*.lock
+conf/
+go.mod
+go.sum
