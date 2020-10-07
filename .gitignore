@@ -12,6 +12,3 @@ logs/
 uploads/
 *.conf
 *.lock
-conf/
-go.mod
-go.sum
