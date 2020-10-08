@@ -6,7 +6,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func InitApiRouter(r *gin.Engine)  {
+func InitRouter(r *gin.Engine)  {
 	//首页
 	r.GET("/", controller.Index)
 	r.POST("/check", middleware.IpBlack, controller.Index)
