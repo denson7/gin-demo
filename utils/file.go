@@ -5,6 +5,7 @@ import (
 	"mime/multipart"
 	"os"
 	"path"
+	"path/filepath"
 )
 
 // 判断文件文件夹是否存在
@@ -73,4 +74,26 @@ func Open(name string, flag int, perm os.FileMode) (*os.File, error) {
 		return nil, err
 	}
 	return f, nil
+}
+
+func CheckFileType(filePath string,exts ...string) bool {
+	ext := filepath.Ext(filePath)
+	for _, giveExt := range exts{
+		if ext == giveExt{
+			return true
+		}
+	}
+	return false
+}
+
+func CheckFileSize(file *os.File,limit int64) bool{
+	fileInfo,err := file.Stat()
+	if err != nil{
+		return false
+	}
+	if fileInfo.Size() <= limit{
+		return true
+	}else{
+		return false
+	}
 }
